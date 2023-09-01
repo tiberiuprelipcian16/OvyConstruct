@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lucrare 1</title>
+    <script src="filesaver.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="costumer">
+        <span>Client</span>
+        <hr>
+
+        <label>Numele si prenumele: </label>
+        <input type="text " id="nameCustomer">
+        <br><br>
+        <label>Adresa: </label>
+        <input type="text " id="addressCostomer">
+        <br><br>
+        <label>Data</label>
+        <input type="date" id=" date ">
+    </div>
+
+    <div class="cote">
+        <span>Cote</span>
+        <hr>
+        <div class="adaugare">
+            <div class="add ">
+                <label>Actiune</label> <input type="text" id="actiuneCote">
+                <label>Metri patrati</label> <input type="number" id="metriCote">
+                <label>Pret/metru</label> <input type="number" id="pretCote">
+                <button class="butt adauga " onclick="adaugaCote()">Adauga</button>
+
+                <div id="adaugateCote"></div>
+            </div>
+        </div>
+        <br><br>
+        <div id="addCote"></div>
+
+    </div>
+
+    <div class="actiuni ">
+        <span>Actiuni</span>
+        <hr>
+
+        <div id="addActiuni"></div>
+    </div>
+
+    <div class="adaugare">
+        <span>Adaugare actiuni</span>
+        <hr>
+        <div class="add ">
+            <label>Actiune</label> <input type="text " id="actiune">
+
+            <label>Pret</label> <input type="number " id="cost">
+
+            <button class="butt adauga " onclick="adauga() ">Adauga</button>
+
+            <div id="adaugate"></div>
+        </div>
+
+    </div>
+
+    <div class="container mt-5 ">
+        <pre id="json "></pre>
+        <button class="btn btn-primary " onclick="downloadAsExcel() ">download excel</button>
+    </div>
+</body>
+<script src="./JavaScript/Cote.js "></script>
+<script src="./JavaScript/AdaugareCote.js "></script>
+<script src="./JavaScript/AdaugareActiuni.js"></script>
+
+</html>

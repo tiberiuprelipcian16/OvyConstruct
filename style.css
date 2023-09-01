@@ -1,0 +1,72 @@
+    body {
+        background: white;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+    
+    .costumer,
+    .adaugare,
+    .cote,
+    .actiuni {
+        margin-top: 20px;
+        width: 90%;
+    }
+    
+    label {
+        font-size: 18px;
+    }
+    
+    input {
+        outline: none;
+        border: 1px solid black;
+        background-color: transparent;
+    }
+    
+    span {
+        font-size: 20px;
+    }
+    
+    hr {
+        border-top: 2px solid rgb(0 0 0);
+    }
+    
+    .butt {
+        color: white;
+        border: none;
+        padding: 3px 10px;
+        border-radius: 4px;
+    }
+    
+    .adauga {
+        background: green;
+    }
+    
+    .remove {
+        background: #ff000059;
+    }
+    
+    .divAdd {
+        display: flex;
+        gap: 10px;
+        align-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    
+    .inputAddCost {
+        width: 100px
+    }
+    
+    .inputAddPret,
+    .inputAdd {
+        width: 150px;
+    }
