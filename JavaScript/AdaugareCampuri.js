@@ -304,3 +304,32 @@ function activeaza(btn) {
 let x = JSON.stringify(baie_act);
 document.getElementById("json").innerHTML = JSON.stringify(x, undefined, 1);
 */
+
+
+
+/*
+jsonData.users.push({
+    name: "James Den",
+    email: "james.den@example.com"
+});
+*/
+
+let data = [{
+    actiune: {},
+    cost: {}
+}];
+
+
+let cst = [];
+for (i = 0; i < document.getElementsByClassName("labelAdd").length; i++) {
+
+    let act = document.getElementsByClassName("labelAdd")[i].textContent;
+    cst[i] = document.getElementsByClassName("inputAdd")[i].value;
+    data[i] = {
+        actiune: act,
+        cost: cst[i]
+    }
+}
+
+console.log(data);
+console.log(JSON.parseInt(data));
