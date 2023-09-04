@@ -11,6 +11,14 @@ baie_cote_label.push("Tencuiala", "Gresie", "Faianta", "Decopertare");
 var addActiuni = document.getElementById("addActiuni");
 var addCote = document.getElementById("addCote");
 
+function costCalc(btn) {
+  var last = btn.id.substr(btn.id.length - 1);
+  var cost = document.getElementById("idInputCostCote" + last);
+  var pret = document.getElementById("idInputPretCote" + last).value * 1;
+  var metri = document.getElementById("idInputMetriCote" + last).value * 1;
+  cost.value = pret * metri;
+}
+
 for (i = 0; i <= Math.max(baie_actiuni_label.length, baie_cote_label.length) - 1; i++) {
   if (baie_actiuni_label.length >= baie_cote_label.length) {
     if (i < baie_cote_label.length) {
@@ -39,19 +47,21 @@ for (i = 0; i <= Math.max(baie_actiuni_label.length, baie_cote_label.length) - 1
       newLabelActiuni.id = "idLabelActiuni" + i;
       newLabelActiuni.className = "labelAdd"; //new input cote
 
-      newInputCote.id = "idInputCote" + i;
+      newInputCote.id = "idInputMetriCote" + i;
       newInputCote.type = "number";
       newInputCote.className = "inputAdd";
       newInputCote.placeholder = "Metri patrati";
-      newInputCote.style.textAlign = "center"; //cote pret
+      newInputCote.style.textAlign = "center";
+      newInputCote.setAttribute("oninput", "costCalc(this)"); //cote pret
 
-      newInputCotePret.id = "idInputCotePret" + i;
+      newInputCotePret.id = "idInputPretCote" + i;
       newInputCotePret.type = "number";
       newInputCotePret.placeholder = "Pret metru patrat";
       newInputCotePret.className = "inputAddPret";
-      newInputCotePret.style.textAlign = "center"; //cote cost
+      newInputCotePret.style.textAlign = "center";
+      newInputCotePret.setAttribute("oninput", "costCalc(this)"); //cote cost
 
-      newInputCoteCost.id = "idInputCoteCost" + i;
+      newInputCoteCost.id = "idInputCostCote" + i;
       newInputCoteCost.className = "inputAddCost";
       newInputCoteCost.setAttribute('disabled', ' ');
       newInputCoteCost.style.textAlign = "center"; //new input actiuni
@@ -261,53 +271,3 @@ for (i = 0; i <= Math.max(baie_actiuni_label.length, baie_cote_label.length) - 1
     }
   }
 }
-
-function dezactiveaza(btn) {
-  document.getElementById(btn.id).setAttribute("style", "background: grey");
-  document.getElementById(btn.id).innerText = "Activeaza";
-  document.getElementById(btn.id).setAttribute("onclick", "activeaza(this)");
-  document.getElementById("idInput" + btn.id).setAttribute('class', 'inputAddDisabled');
-  document.getElementById("idLabel" + btn.id).setAttribute('class', 'labelAddDisabled');
-  document.getElementById("idInput" + btn.id).setAttribute('disabled', ' ');
-  document.getElementById("idDiv" + btn.id).setAttribute("style", "background-color: lightgrey");
-}
-
-function activeaza(btn) {
-  document.getElementById(btn.id).innerText = "Dezactiveaza";
-  document.getElementById(btn.id).setAttribute("style", "background: purple");
-  document.getElementById(btn.id).setAttribute("onclick", "dezactiveaza(this)");
-  document.getElementById("idInput" + btn.id).setAttribute('class', 'inputAdd');
-  document.getElementById("idLabel" + btn.id).setAttribute('class', 'labelAdd');
-  document.getElementById("idInput" + btn.id).removeAttribute("disabled", "");
-  document.getElementById("idDiv" + btn.id).setAttribute("style", "background-color: transparent");
-}
-/*
-let x = JSON.stringify(baie_act);
-document.getElementById("json").innerHTML = JSON.stringify(x, undefined, 1);
-*/
-
-/*
-jsonData.users.push({
-    name: "James Den",
-    email: "james.den@example.com"
-});
-*/
-
-
-var data = [{
-  actiune: {},
-  cost: {}
-}];
-var cst = [];
-
-for (i = 0; i < document.getElementsByClassName("labelAdd").length; i++) {
-  var act = document.getElementsByClassName("labelAdd")[i].textContent;
-  cst[i] = document.getElementsByClassName("inputAdd")[i].value;
-  data[i] = {
-    actiune: act,
-    cost: cst[i]
-  };
-}
-
-console.log(data);
-console.log(JSON.parseInt(data));

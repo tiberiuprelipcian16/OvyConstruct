@@ -38,22 +38,6 @@ function downloadAsExcel() {
     actiune: "Total",
     cost: suma(cst)
   };
-  /*
-      const data = [{
-              "Actiune": nameCustomer,
-              "Cost": nameCustomer,
-          },
-          {
-              "Actiune": nameCustomer,
-              "Cost": nameCustomer,
-          },
-          {
-              "Actiune": nameCustomer,
-              "Cost": nameCustomer,
-          }
-      ];
-      //document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 3);*/
-
   var worksheet = XLSX.utils.json_to_sheet(data);
   var workbook = {
     Sheets: {

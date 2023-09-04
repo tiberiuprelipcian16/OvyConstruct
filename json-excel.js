@@ -37,27 +37,10 @@ function downloadAsExcel() {
         console.log(cst[i]);
     }
 
-
-
     data[document.getElementsByClassName("labelAdd").length + 2] = {
-            actiune: "Total",
-            cost: suma(cst)
-        }
-        /*
-            const data = [{
-                    "Actiune": nameCustomer,
-                    "Cost": nameCustomer,
-                },
-                {
-                    "Actiune": nameCustomer,
-                    "Cost": nameCustomer,
-                },
-                {
-                    "Actiune": nameCustomer,
-                    "Cost": nameCustomer,
-                }
-            ];
-            //document.getElementById("json").innerHTML = JSON.stringify(data, undefined, 3);*/
+        actiune: "Total",
+        cost: suma(cst)
+    }
 
     const worksheet = XLSX.utils.json_to_sheet(data);
     const workbook = {

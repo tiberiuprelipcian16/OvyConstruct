@@ -21,6 +21,7 @@ function adaugaCote() {
 
     //label actiune
     newLabelCote.id = "LabelAddCote" + clickCountCote;
+    newLabelCote.className = "labelAdd";
 
     //input metri
     newInputMetriCote.setAttribute("type", "number");
@@ -33,9 +34,10 @@ function adaugaCote() {
     newInputPretCote.setAttribute("disabled", "true");
 
     //input cost
-    newInputCostCote.setAttribute("type", "text");
+    newInputCostCote.setAttribute("type", "number");
     newInputCostCote.id = "InputAddCostCote" + clickCountCote;
     newInputCostCote.setAttribute("disabled", "true");
+    newInputCostCote.className = "inputAdd";
 
     //remove butt
     removeButtCote.innerText = "Sterge";
@@ -68,10 +70,6 @@ function adaugaCote() {
     } else {
         newInputPretCote.value = pretCote;
         newInputMetriCote.value = metriCote;
-        newInputCostCote.value = "Pret: " + (pretCote * metriCote) + " EUR";
+        newInputCostCote.value = (pretCote * metriCote);
     }
-}
-
-function stergeAdaugare(btn) {
-    document.getElementById("RemoveDiv" + btn.id).remove();
 }

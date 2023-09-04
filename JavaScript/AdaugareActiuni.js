@@ -1,6 +1,6 @@
-clickCount = 0;
+clickCountActiuni = 0;
 
-function adauga() {
+function adaugaActiuni() {
 
     const adaugate = document.getElementById("adaugate");
     const cost = document.getElementById("cost").value;
@@ -15,13 +15,18 @@ function adauga() {
     removeButt.setAttribute("style", "background: red");
     removeButt.setAttribute("onclick", "stergeAdaugare(this)");
     removeButt.setAttribute("class", "butt remove");
+    removeButt.id = "Add" + clickCountActiuni;
+
     newInput.setAttribute("type", "number");
-    newInput.id = "InputAdd" + clickCount;
-    newLabel.id = "LabelAdd" + clickCount;
-    removeButt.id = "Add" + clickCount;
+    newInput.id = "InputAdd" + clickCountActiuni;
+    newInput.className = "inputAdd";
+
+    newLabel.id = "LabelAdd" + clickCountActiuni;
+    newLabel.className = "labelAdd";
+
     newDiv.className = "divAdd"
-    newDiv.id = "RemoveDivAdd" + clickCount;
-    clickCount++;
+    newDiv.id = "RemoveDivAdd" + clickCountActiuni;
+    clickCountActiuni++;
 
 
     if (actiune != '') {
@@ -43,8 +48,4 @@ function adauga() {
         newInput.value = cost;
 
 
-}
-
-function stergeAdaugare(btn) {
-    document.getElementById("RemoveDiv" + btn.id).remove();
 }
